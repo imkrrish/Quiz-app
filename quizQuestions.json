@@ -1,0 +1,72 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "options": [
+            "New York",
+            "London",
+            "Paris",
+            "Dublin"
+        ],
+        "answer": "Paris"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "options": [
+            "Vincent Van Gogh",
+            "Pablo Picasso",
+            "Leonardo Da Vinci",
+            "Claude Monet"
+        ],
+        "answer": "Leonardo Da Vinci"
+    },
+    {
+        "question": "What is the largest planet in our solar system?",
+        "options": [
+            "Mars",
+            "Earth",
+            "Jupiter",
+            "Venus"
+        ],
+        "answer": "Jupiter"
+    },
+    {
+        "question": "Which gas do plants absorb from the atmosphere?",
+        "options": [
+            "Oxygen",
+            "Carbon Dioxide",
+            "Nitrogen",
+            "Hydrogen"
+        ],
+        "answer": "Carbon Dioxide"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": [
+            "Jupiter",
+            "Mars",
+            "Venus",
+            "Saturn"
+        ],
+        "answer": "Mars"
+    },
+    {
+        "question": "What is the chemical symbol for gold?",
+        "options": [
+            "Go",
+            "Gd",
+            "Au",
+            "Ag"
+        ],
+        "answer": "Au"
+    },
+    {
+        "question": "What is the tallest mountain in the world?",
+        "options": [
+            "Mount Everest",
+            "Mount Kilimanjaro",
+            "K2",
+            "Mount Fuji"
+        ],
+        "answer": "Mount Everest"
+    }
+]

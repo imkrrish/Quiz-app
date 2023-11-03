@@ -1,41 +1,3 @@
-const quizData = [
-  {
-    question: "What is the capital of France?",
-    options: ["New York", "London", "Paris", "Dublin"],
-    answer: "Paris",
-  },
-  {
-    question: "Who painted the Mona Lisa?",
-    options: ["Vincent Van Gogh", "Pablo Picasso", "Leonardo Da Vinci", "Claude Monet"],
-    answer: "Leonardo Da Vinci",
-  },
-  {
-    question: "What is the largest planet in our solar system?",
-    options: ["Mars", "Earth", "Jupiter", "Venus"],
-    answer: "Jupiter",
-  },
-  {
-    question: "Which gas do plants absorb from the atmosphere?",
-    options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-    answer: "Carbon Dioxide",
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Jupiter", "Mars", "Venus", "Saturn"],
-    answer: "Mars",
-  },
-  {
-    question: "What is the chemical symbol for gold?",
-    options: ["Go", "Gd", "Au", "Ag"],
-    answer: "Au",
-  },
-  {
-    question: "What is the tallest mountain in the world?",
-    options: ["Mount Everest", "Mount Kilimanjaro", "K2", "Mount Fuji"],
-    answer: "Mount Everest",
-  },
-];
-
 let currentQuestionIndex = 0;
 let score = 0;
 let attemptedQuestions = 0;
@@ -63,6 +25,30 @@ const resetButton = document.querySelector(".reset-button");
 
 let timerInterval;
 let progressBarPercentage = 0;
+
+let quizData;
+
+function initializeQuiz() {
+  startQuizButton.addEventListener("click", () => {
+    startQuizButton.style.display = "none";
+    progressContainer.style.display = "block";
+    questionContainer.style.display = "block";
+
+    shuffleArray(quizData);
+    displayQuestion(quizData[currentQuestionIndex]);
+  });
+}
+
+// Load the quiz data from the JSON file.
+fetch("quizQuestions.json")
+  .then((response) => response.json())
+  .then((data) => {
+    quizData = data;
+    initializeQuiz(); // Call the initialization function once the data is loaded.
+  })
+  .catch((error) => {
+    console.error("Failed to load quiz data: " + error);
+  });
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -164,12 +150,3 @@ function resetQuiz() {
   optionsElement.innerHTML = "";
   progressText.textContent = "Question 0 of 0";
 }
-
-startQuizButton.addEventListener("click", () => {
-  startQuizButton.style.display = "none";
-  progressContainer.style.display = "block";
-  questionContainer.style.display = "block";
-
-  shuffleArray(quizData);
-  displayQuestion(quizData[currentQuestionIndex]);
-});
